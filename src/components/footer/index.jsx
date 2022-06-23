@@ -1,13 +1,18 @@
 import * as React from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
+import Text from "./Text";
 
 export default function Footer() {
-  var today = new Date();
   return (
     <Card sx={{ mt: 1, color: "gray", boxShadow: 0 }}>
-      <CardContent>
-        <center> &copy; Copyright TERAI {today.getFullYear()}</center>
+      <CardContent
+        sx={{
+          p: 0,
+          ":last-child": { pb: 0 },
+        }}
+      >
+        <Text />
       </CardContent>
     </Card>
   );
