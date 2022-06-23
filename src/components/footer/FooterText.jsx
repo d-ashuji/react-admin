@@ -4,7 +4,7 @@ import ThemeSetting from "../ThemeSetting";
 import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box";
 
-const Text = () => {
+const Text = ({ sx }) => {
   return (
     <Box
       sx={{
@@ -13,13 +13,22 @@ const Text = () => {
         alignItems: "center",
         justifyContent: "center",
         fontStyle: "italic",
+        ...sx,
       }}
     >
-      <Typography color="text.secondary">
+      <Typography sx={{ fontSize: 12 }}>
         {ThemeSetting.footerText}{" "}
         {ThemeSetting.footerYear && new Date().getFullYear()}{" "}
       </Typography>
-      <Avatar alt="Remy Sharp" src={ThemeSetting.logoUrl} sx={{ ml: 1 }} />
+      <Avatar
+        alt="Remy Sharp"
+        src={ThemeSetting.logoUrl}
+        sx={{
+          ml: 1,
+          height: 24,
+          ".css-1pqm26d-MuiAvatar-img": { objectFit: "scale-down" },
+        }}
+      />
     </Box>
   );
 };
